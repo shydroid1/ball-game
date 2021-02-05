@@ -22,32 +22,17 @@ var lives = 2;
 var bricks = [];
 var sound;
 
-// game sound
-function sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "audio");
-  this.sound.setAttribute("controls","none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function(){
-    this.sound.play();
-  }
-  this.stop= function() {
-    this.sound.pause();
-  }
-}
-
 // game sound #2
 var myGamePiece;
 var myObstacles = [];
 var mySound;
 
+// game start 
 function startGame() {
   mySound = new sound("meme.mp3");
   myGameArea.start();
-}
-
+  
+ //update game every round
 function updateGameArea() {
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (i = 0; i < myObstacles.length; i += 1) {
@@ -210,7 +195,7 @@ function draw() {
     }
     else {
       lives--;
-      if(!lives) {
+      if(lives) {
         alert("Your Dead ShitAss");
         document.location.reload();
       }
