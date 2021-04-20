@@ -1,1 +1,1 @@
-boring gsme for no reason
+boring game for no reason
